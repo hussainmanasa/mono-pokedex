@@ -39,8 +39,8 @@ type Props = {
 
 const Table = ({ rows, column, pageSize, onRowClick, getRowId }: Props) => {
   return (
-    <div className={styles.dataTable} data-testid="data-table">
-      <div>
+    <div className={styles.dataTable}>
+      <div style={{ height: "700px", width: "100%" }}>
         <DataGrid
           rows={rows}
           columns={column}
