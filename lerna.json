@@ -1,0 +1,8 @@
+{
+  "packages": ["packages/*"],
+  "version": "0.0.0",
+  "lerna-dockerize": {
+    "templateDockerfileName": "Dockerfile.template",
+    "baseDockerfileName": "Dockerfile.base"
+  }
+}

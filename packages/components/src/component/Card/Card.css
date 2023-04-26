@@ -1,0 +1,30 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1rem;
+}
+
+.name {
+  text-transform: capitalize;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.pokemon-img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.physical-measurements {
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 10px;
+}
+
+.location {
+  display: flex;
+  gap: 10px;
+}
