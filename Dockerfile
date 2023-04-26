@@ -7,4 +7,4 @@ COPY . /app
 RUN npm run build:pokedex
 
 EXPOSE 3000
-CMD ["npm", "run", "prod:pokedex"]
+CMD ["npm", "run", "prod-pokedex"]
