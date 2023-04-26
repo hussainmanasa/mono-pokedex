@@ -3,6 +3,7 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Pagination from "@mui/material/Pagination";
 import { getPokemonList, selectPokemonCount } from "../store/pokemonListSlice";
 import { useDispatch, useSelector } from "react-redux";
+import styles from "./Table.module.css";
 
 const PaginationNode = () => {
   const dispatch = useDispatch();
@@ -38,8 +39,8 @@ type Props = {
 
 const Table = ({ rows, column, pageSize, onRowClick, getRowId }: Props) => {
   return (
-    <div style={{ padding: 10, margin: 10 }}>
-      <div data-testid="data-table" style={{ height: "700px", width: "100%" }}>
+    <div className={styles.dataTable} data-testid="data-table">
+      <div>
         <DataGrid
           rows={rows}
           columns={column}
