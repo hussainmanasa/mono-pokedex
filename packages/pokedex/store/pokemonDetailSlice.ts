@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AppState, AppThunk } from "./store";
 import { HYDRATE } from "next-redux-wrapper";
-import { PokemonData } from "../pages/[name]";
 import { fetchPokemonData } from "pokedex-utilities";
+import { PokemonData } from "../types/Pokemon.types";
 
 const initialState: { data: PokemonData | null } = { data: null };
 
