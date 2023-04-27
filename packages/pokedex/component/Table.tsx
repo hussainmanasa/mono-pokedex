@@ -1,9 +1,9 @@
-import React from "react";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Pagination from "@mui/material/Pagination";
-import { getPokemonList, selectPokemonCount } from "../store/pokemonListSlice";
+import { DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
+import { getPokemonList, selectPokemonCount } from "../store/pokemonListSlice";
 import styles from "./Table.module.css";
+import { RowData, TableProps } from "../types/Table.types";
 
 const PaginationNode = () => {
   const dispatch = useDispatch();
@@ -25,19 +25,13 @@ const PaginationNode = () => {
   );
 };
 
-type RowData = { name: string; url: string };
-
-type Props = {
-  rows: RowData[];
-  column: GridColDef<any | any | any>[];
-  pageSize: number;
-  rowsPerPageOptions: number[];
-  count: number;
-  onRowClick: ({ row }: { row: RowData }) => void;
-  getRowId: (row: RowData) => string | number;
-};
-
-const Table = ({ rows, column, pageSize, onRowClick, getRowId }: Props) => {
+const Table = ({
+  rows,
+  column,
+  pageSize,
+  onRowClick,
+  getRowId,
+}: TableProps) => {
   return (
     <div className={styles.dataTable}>
       <div style={{ height: "700px", width: "100%" }}>

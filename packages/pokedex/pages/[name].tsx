@@ -1,5 +1,4 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { RowData } from ".";
 import { wrapper } from "../store/store";
 import {
   fetchPokemonDetail,
@@ -8,14 +7,8 @@ import {
 import { useSelector } from "react-redux";
 import { Card } from "pokedex-components";
 import { fetchPokemonList } from "pokedex-utilities";
-
-export type PokemonData = {
-  name: string;
-  sprites: object | undefined;
-  height: number;
-  weight: number;
-  location_area_encounters: string;
-};
+import { RowData } from "../types/Table.types";
+import { PokemonData } from "../types/Pokemon.types";
 
 const PokemonDetail = () => {
   const data = useSelector(selectPokemonDetail) as PokemonData;

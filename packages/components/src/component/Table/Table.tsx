@@ -7,8 +7,6 @@ const Table = ({
   pageSize,
   onRowClick,
 }: Partial<DataGridProps>) => {
-  console.log();
-
   return (
     <div style={{ height: "500px", width: "100%" }}>
       <DataGrid

@@ -8,9 +8,7 @@ import {
 } from "../store/pokemonListSlice";
 import { wrapper } from "../store/store";
 import Table from "../component/Table";
-
-//Types
-export type RowData = { name: string; url: string };
+import { RowData } from "../types/Table.types";
 
 const columns: GridColDef[] = [
   {

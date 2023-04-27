@@ -49,7 +49,10 @@ $ npm run prod-pokedex
 # 1: Building image from base folder
 $ docker build .
 
-# 2: Runnnig the image
+# 2: Getting the imageId
+$ docker images
+
+# 3: Runnnig the image
 $ docker run -d -p exposedPort:containerPort <imageId>
 ```
 

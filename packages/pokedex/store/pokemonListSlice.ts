@@ -2,18 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { AppState, AppThunk } from "./store";
 import { HYDRATE } from "next-redux-wrapper";
 import { fetchPokemonList } from "pokedex-utilities";
+import { RowData } from "../types/Table.types";
 
-type DataType = {
-  name: string;
-  url: string;
+const initialState: { data: RowData[]; count: number; allData: RowData[][] } = {
+  data: [],
+  allData: [],
+  count: 0,
 };
-
-const initialState: { data: DataType[]; count: number; allData: DataType[][] } =
-  {
-    data: [],
-    allData: [],
-    count: 0,
-  };
 // Actual Slice
 export const pokemonListSlice = createSlice({
   name: "pokemon/list",
@@ -54,7 +49,7 @@ export const getPokemonList =
   (page: any): AppThunk =>
   async (dispatch, getState) => {
     try {
-      const allData = getState()?.pokemon?.allData as DataType[][];
+      const allData = getState()?.pokemon?.allData as RowData[][];
       if (page >= 1 && allData[page - 1]) {
         dispatch(setPokemonList(allData[page - 1]));
       } else {
