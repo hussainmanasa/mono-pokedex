@@ -21,6 +21,7 @@ const PokemonDetail = () => {
           weight={data?.weight}
           location={data?.location_area_encounters}
           images={data?.sprites}
+          abilities={data?.abilities}
         />
       )}
     </div>

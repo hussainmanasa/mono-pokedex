@@ -1,16 +1,8 @@
 import React from "react";
 import "./Card.css";
+import { AbilityProp, CardProps } from "./Card.types";
 
-interface cardProps {
-  name: string;
-  height?: number;
-  weight?: number;
-  location?: string;
-  images?: object;
-  abilities?: [];
-}
-
-const Card = (props: cardProps) => {
+const Card = (props: CardProps) => {
   const { name, height, weight, location, images, abilities } = props;
   return (
     <div className="card">
@@ -19,14 +11,14 @@ const Card = (props: cardProps) => {
       <div className="physical-measurements">
         <div>
           <span>
-            <b>Height:</b>
+            <b>Height: </b>
           </span>
           <span>{height}</span>
         </div>
 
         <div>
           <span>
-            <b>Weight:</b>
+            <b>Weight: </b>
           </span>
           <span>{weight}</span>
         </div>
@@ -35,12 +27,30 @@ const Card = (props: cardProps) => {
       <div className="location">
         <div>
           <span>
-            <b>Location:</b>
+            <b>Location: </b>
           </span>
           <a target="_blank" href={location}>
             {location}
           </a>
         </div>
+      </div>
+
+      <div className="abilities">
+        <div>
+          <b>Abilities: </b>
+        </div>
+        <ul className="abilities-list">
+          {React.Children.toArray(
+            abilities?.map((ability: AbilityProp) => (
+              <li>
+                <span>{ability?.ability?.name}: </span>
+                <a href={ability?.ability?.url} target="_blank">
+                  {ability?.ability?.url}
+                </a>
+              </li>
+            ))
+          )}
+        </ul>
       </div>
     </div>
   );

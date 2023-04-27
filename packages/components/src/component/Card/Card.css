@@ -19,7 +19,6 @@
 }
 
 .physical-measurements {
-  padding-bottom: 1rem;
   display: flex;
   gap: 10px;
 }
@@ -27,4 +26,13 @@
 .location {
   display: flex;
   gap: 10px;
+}
+
+.physical-measurements,
+.location {
+  padding-bottom: 1rem;
+}
+
+.abilities-list li:not(:last-child) {
+  padding-bottom: 0.5rem;
 }

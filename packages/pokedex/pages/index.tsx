@@ -44,7 +44,7 @@ export default function Home() {
   };
   return (
     <div>
-      {pokemonList && (
+      {pokemonList && pokemonList?.length && (
         <Table
           count={count}
           rows={pokemonList}

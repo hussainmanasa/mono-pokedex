@@ -4,4 +4,5 @@ export type PokemonData = {
   height: number;
   weight: number;
   location_area_encounters: string;
+  abilities: [];
 };
